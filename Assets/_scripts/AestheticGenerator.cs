@@ -63,7 +63,7 @@ public class AestheticGenerator : Singleton<AestheticGenerator>
 
     void CleanAestheticSquares()
     {
-        for(int i = 0; i < aestheticSquares.Count; i++)
+        for (int i = aestheticSquares.Count - 1; i >= 0; i--)
         {
             if(aestheticSquares[i].transform.position.x < (activePlayer.transform.position.x - aestheticBehindToRegenDistance))
             {
@@ -71,7 +71,6 @@ public class AestheticGenerator : Singleton<AestheticGenerator>
                 aestheticSquares.RemoveAt(i);
             }
         }
-
     }
 
     public IEnumerator CleanAllAestheticSquaresAfterDelay(float delay = 0.35f)
