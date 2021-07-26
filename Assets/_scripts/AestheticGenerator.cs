@@ -43,6 +43,9 @@ public class AestheticGenerator : Singleton<AestheticGenerator>
         CleanAestheticSquares();
     }
 
+    public void ResetDistance()
+    {
+    }
 
     Player activePlayer;
 
@@ -82,11 +85,8 @@ public class AestheticGenerator : Singleton<AestheticGenerator>
 
     void CleanAllAestheticSquares()
     {
-        for (int i = 0; i < aestheticSquares.Count; i++)
-        {
-            Destroy(aestheticSquares[i]);
-            aestheticSquares.RemoveAt(i);
-        }
+        aestheticSquares.ForEach(Destroy);
+        aestheticSquares.Clear();
     }
 
     public void SetActivePlayer(Player p){

@@ -334,6 +334,9 @@ public class GameController : Singleton<GameController>
         pointSource.volume = Studios.Utils.SoundManager.volume;
 
         platformGenerator.ClearAll();
+        
+        StartCoroutine(aestheticGenerator.CleanAllAestheticSquaresAfterDelay());
+        aestheticGenerator.SetActivePlayer(activePlayer);
 
         if (OnGameStart != null)
             OnGameStart.Invoke();
