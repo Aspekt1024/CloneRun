@@ -162,9 +162,11 @@ public class MenuControl : MonoBehaviour
         if(menuOptionShown == 1){
             menuOptionShown = 0;
             creditsCanvas.interactable = false;
+            creditsCanvas.blocksRaycasts = false;
         }else{
             menuOptionShown = 1;
             creditsCanvas.interactable = true;
+            creditsCanvas.blocksRaycasts = true;
         }
     }
 
